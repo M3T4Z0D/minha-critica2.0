@@ -154,7 +154,7 @@
                     <h2>Desculpe, mas não temos registro no banco.</h2>
                 </div>
                 <div class="subtitle" style="color: whitesmoke;">
-                    <p>Que tal fazer o primeiro registro? Faça o <a href="./src/views/register_page.php">cadastro</a> e comece.</p>
+                    <p>Que tal fazer o primeiro registro? Faça o <a href="./app/views/media/media_register_page.php">cadastro</a> e comece.</p>
                 </div>
 
             </div>
