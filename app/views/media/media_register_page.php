@@ -12,9 +12,8 @@
 </head>
 
 <body>
-    <nav>
-        <object width="100%" height="100%" data="../../nav__menu.php"></object>
-    </nav>
+    <?php include('app/views/navbar.php') ?>
+
     <div class="corpo">
         <form id="selecao">
             <label for="media">Qual o tipo de mídia que você deseja cadastrar?</label>
@@ -28,7 +27,7 @@
         </form>
     </div>
 
-    <form class="media" action="http://localhost:8080/app/views/media/media_register_page.php" method="post" id="mediaForm">
+    <form class="media" method="post" id="mediaForm">
         <div class="image">
             <img src="../public/img/no-media.png" id="preview">
             <input class="fileInput" type="file" id="imgPoster" name="Poster" accept="image/*">

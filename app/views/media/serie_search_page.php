@@ -7,13 +7,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Minha Crítica</title>
     <link rel="stylesheet" href="../public/css/navbar.css">
-    <link href="../public/css/serie_search_page.css" rel="stylesheet">
+    <link href="../public/css/movie_search_page.css" rel="stylesheet">
 </head>
 
 <body>
-    <nav>
-        <object width="100%" height="100%" data="../../nav__menu.php"></object>
-    </nav>
+    <?php include('app/views/navbar.php') ?>
+
     <div class="corpo">
         <div class="ordem_filtro">
             <form>

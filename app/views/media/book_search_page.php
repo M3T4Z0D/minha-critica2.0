@@ -11,9 +11,8 @@
 </head>
 
 <body>
-    <nav>
-        <object width="100%" height="100%" data="../../nav__menu.php"></object>
-    </nav>
+    <?php include('app/views/navbar.php') ?>
+
     <div class="corpo">
         <div class="ordem_filtro">
             <form>
