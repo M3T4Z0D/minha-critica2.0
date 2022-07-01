@@ -28,7 +28,7 @@
         </form>
     </div>
 
-    <form class="media" action="http://localhost:8080/app/views/media/media_register_page/" method="post" id="mediaForm">
+    <form class="media" action="http://localhost:8080/app/views/media/media_register_page.php" method="post" id="mediaForm">
         <div class="image">
             <img src="../public/img/no-media.png" id="preview">
             <input class="fileInput" type="file" id="imgPoster" name="Poster" accept="image/*">
