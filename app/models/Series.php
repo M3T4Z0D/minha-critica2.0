@@ -70,7 +70,7 @@ class Serie
     static public function buscarTodos(): array
     {
         $con = Database::getConnection();
-        $stm = $con->prepare('SELECT caminhoimg, titulo, ano, genero, elenco, sinopse FROM Series');
+        $stm = $con->prepare('SELECT caminhoimg, titulo, ano, genero, elenco, sinopse FROM Series  ORDER BY titulo');
         $stm->execute();
 
         $resultados = [];

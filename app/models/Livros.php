@@ -70,7 +70,7 @@ class Livro
     static public function buscarTodos(): array
     {
         $con = Database::getConnection();
-        $stm = $con->prepare('SELECT caminhoimg, titulo, ano, genero, autor, sinopse FROM Livros');
+        $stm = $con->prepare('SELECT caminhoimg, titulo, ano, genero, autor, sinopse FROM Livros ORDER BY titulo');
         $stm->execute();
 
         $resultados = [];

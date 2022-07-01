@@ -72,7 +72,7 @@ class Filme
     static public function buscarTodos(): array
     {
         $con = Database::getConnection();
-        $stm = $con->prepare('SELECT caminhoimg, titulo, ano, genero, elenco, duracao, sinopse FROM Filmes');
+        $stm = $con->prepare('SELECT caminhoimg, titulo, ano, genero, elenco, duracao, sinopse FROM Filmes ORDER BY titulo');
         $stm->execute();
 
         $resultados = [];
