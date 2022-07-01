@@ -8,7 +8,9 @@
 </head>
 
 <body>
-    <?php include('app/views/navbar.php') ?>
+    <?php 
+        include('app/views/navbar.php');
+     ?>
 
     <div class="corpo">
         <?php if ($lista != null) { ?>
