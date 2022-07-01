@@ -4,7 +4,7 @@
 <head>
     <?php include('app/views/head.php') ?>
     <title>Minha Crítica</title>
-    <link href="<?= BASEPATH  ?>/public/css/home.css" rel="stylesheet">
+    <link href="<?= BASEPATH  ?>public/css/home.css" rel="stylesheet">
 </head>
 
 <body>
