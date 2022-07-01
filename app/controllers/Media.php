@@ -19,18 +19,25 @@ class MediaController extends Controller
 
     function __construct()
     {
-        if (isset($_SESSION['user'])){
-            $this->loggedUser = $_SESSION['user'];  
-        } 
+        if (isset($_SESSION['user'])) {
+            $this->loggedUser = $_SESSION['user'];
+        }
     }
 
     public function buscaFilmes(): void
     {
-        if (!$this->loggedUser) {
-            $this->view('user/login');
-        } else {
-            header('Location: ' . BASEPATH . 'media/movie_search_page');
-        }
+        $this->view('media/movie_search_page');
     }
-
+    public function buscaSeries(): void
+    {
+        $this->view('media/serie_search_page');
+    }
+    public function buscaLivros(): void
+    {
+        $this->view('media/book_search_page');
+    }
+    public function adicionamedia(): void
+    {
+        $this->view('media/media_register_page');
+    }
 }
