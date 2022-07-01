@@ -23,6 +23,9 @@ class LoginController extends Controller
         if (isset($_SESSION['user'])) $this->loggedUser = $_SESSION['user'];
     }
 
+    /** 
+     * Função que coloca o usuário na home page do site
+     */
     public function home(): void
     {
         $this->view('home');
@@ -119,5 +122,4 @@ class LoginController extends Controller
         unset($_SESSION['user']);
         header('Location: ' . BASEPATH . 'login?mensagem=Usuário deslogado com sucesso!');
     }
-
 }
