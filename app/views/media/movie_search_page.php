@@ -52,6 +52,7 @@
                 </div>
                 <div class="add-filme centralizar">
                     <input type="button" name="add-filme" value="Adicionar filme">
+                    <a href="/minhacritica2.0/app/views/media_register_page" target="_parent"></a>
                 </div>
             </div>
             <div class="filmes">
