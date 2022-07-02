@@ -40,21 +40,18 @@ class LoginController extends Controller
         if (!$this->loggedUser) {
             $this->view('user/login');
         } else {
-            header('Location: ' . BASEPATH . 'user/info');
+            header('Location: ' . BASEPATH . 'home');
         }
     }
 
-    /**
-     *  Função que trata de verificar a identididade de um usuário.
-     *  Se correta, adiciona o usuário à seção para o mesmo não precise fazer novamente.
-     */
+    
     public function login(): void
     {
         $usuario = Usuario::buscarUsuario($_POST['email']);
 
-        if ($usuario && $usuario->igual($_POST['email'], $_POST['senha'])) {
+        if ($usuario && $usuario->igual($_POST['email'], $_POST['password'])) {
             $_SESSION['user'] = $this->loggedUser = $usuario;
-            header('Location: /user/info');
+            $this->view('home');
         } else {
             header('Location: ' . BASEPATH . 'login?email=' . $_POST['email'] . '&mensagem=Usuário e/ou senha incorreta!');
         }
@@ -75,7 +72,7 @@ class LoginController extends Controller
     public function cadastrar(): void
     {
         try {
-            $user = new Usuario($_POST['email'], $_POST['senha'], $_POST['nome']);
+            $user = new Usuario($_POST['email'], $_POST['password'], $_POST['name']);
             $user->salvar();
             header('Location: ' . BASEPATH . 'login?email=' . $_POST['email'] . '&mensagem=Usuário cadastrado com sucesso!');
         } catch (\Throwable $th) {
@@ -116,7 +113,7 @@ class LoginController extends Controller
     public function sair(): void
     {
         if (!$this->loggedUser) {
-            header('Location: ' . BASEPATH . 'login?mensagem=Você precisa se identificar primeiro');
+            header('Location: ' . BASEPATH . 'login');
             return;
         }
         unset($_SESSION['user']);

@@ -9,7 +9,7 @@ include_once __DIR__ . '/app/Database.php';
 include_once __DIR__ . '/app/controllers/Controller.php';
 include_once __DIR__ . '/app/controllers/Login.php';
 include_once __DIR__ . '/app/controllers/Media.php';
-include_once __DIR__ . '/app/modelos/Usuario.php';
+include_once __DIR__ . '/app/models/Usuario.php';
 include_once __DIR__ . '/libs/Route.php';
 
 use App\Database;
@@ -36,7 +36,7 @@ Route::add('/user/info/([0-9]+)', fn ($id) => $controller->publicInfo($id), ['ge
 
 Route::add('/login', fn ()  => $controller->login(), ['post']);
 Route::add('/user/register', fn ()  => $controller->cadastrar(), ['post']);
-Route::add('/logout', fn () => $controller->sair(), ['post']);
+Route::add('/logout', fn () => $controller->sair(), ['get']);
 
 // Rota auxiliar para redirecionar o usuário.
 Route::add('/', function () {

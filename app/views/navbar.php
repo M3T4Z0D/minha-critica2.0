@@ -12,7 +12,19 @@
     </div>
 
     <div class="nav_actions">
+        <?php
+            $loggedUser = $_SESSION['user'];
+            if(!$loggedUser){
+        ?>
         <a href="<?= BASEPATH  ?>login" target="_parent">Entrar</a>
         <a href="<?= BASEPATH  ?>user/register" target="_parent">Registrar</a>
+        <?php
+            }
+            else{
+        ?>
+        <a href="<?= BASEPATH  ?>logout" target="_parent">Sair</a>
+        <?php
+            }
+        ?>
     </div>
 </nav>
