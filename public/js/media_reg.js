@@ -8,9 +8,9 @@ function showMedia() {
 
     const form = document.getElementById('mediaForm')
     const action = ['filme', 'serie', 'livro'] 
-    form.action = window.location.assign("../../../media_register_page.php")
+    form.action = window.location.assign("../../views/media/media_register_page")
 }
 
 function cancel() {
-    window.location.assign("../../../index.php")
+    window.location.assign("../../home")
 } 
