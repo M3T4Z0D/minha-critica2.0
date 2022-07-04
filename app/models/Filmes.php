@@ -48,7 +48,16 @@ class Filme
         $stm->bindValue(':duracao', $this->duracao);
         $stm->bindValue(':sinopse', $this->sinopse);
         $stm->bindValue(':caminhoimg', $this->caminhoimg);
-        $stm->execute();
+        $caminhoimg = $_FILES['caminhoimg'];
+        $nomeArquivo = 'caminhoimg' . $$caminhoimg = $_FILES['caminhoimg'];
+        $nomeArquivo = 'caminhoimg' . $caminhoimg['name'];
+        $diretorio = __DIR__ . '\..\..\public\img';
+
+        $stm->execute(
+            array('nome' => $_POST['nome'], 'tipo' => $_POST['tipo'], 'descricao' => $_POST['descricao'], 'imagem' => $_POST['imagem'])
+        );
+        move_uploaded_file($_FILES['imagem']['tmp_name'], $diretorio  . "\\" . $nomeArquivo);
+        ['name'];
     }
 
     static public function buscarFilme($titulo): ?Filme
