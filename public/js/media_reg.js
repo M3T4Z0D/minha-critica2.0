@@ -8,7 +8,7 @@ function showMedia() {
 
     const form = document.getElementById('mediaForm')
     const action = ['filme', 'serie', 'livro'] 
-    form.action = 'http://localhost:8080/app/views/media/media_register_page/' + action[selectedElement]
+    form.action = window.location.assign("../../../media_register_page.php")
 }
 
 function cancel() {
