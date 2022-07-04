@@ -50,7 +50,7 @@
                     <div class="input-pesquisa centralizar"><input type="text" id="pesquisa_filme" name="pesquisa_filme" placeholder="Pesquisar livro"></div>
                 </div>
                 <div class="add-filme centralizar">
-                    <input type="button" name="add-filme" value="Adicionar livro">
+                    <a href="<?= BASEPATH  ?>adicionaMedia" target="_parent"><input type="button" name="add-filme" value="Adicionar Livro"></a>
                 </div>
             </div>
             <div class="filmes">
