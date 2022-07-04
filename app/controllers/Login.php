@@ -113,7 +113,7 @@ class LoginController extends Controller
     public function sair(): void
     {
         if (!$this->loggedUser) {
-            header('Location: ' . BASEPATH . 'login');
+            header('Location: ' . BASEPATH . 'login?mensagem=Você precisa se identificar primeiro');
             return;
         }
         unset($_SESSION['user']);
