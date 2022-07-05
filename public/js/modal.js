@@ -15,6 +15,11 @@ const getMessage = () => {
 }
 
 const showMessage = (message) => {
+
+  if(!message.text){
+    return;
+  }
+
   const Toast = Swal.mixin({
     toast: true,
     position: 'top-end',
