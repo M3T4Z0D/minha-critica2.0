@@ -44,7 +44,6 @@ nav a{
 
 .nav_actions{
     height: 100%;
-    margin-right: 1rem;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -64,39 +63,54 @@ nav a.active{
     color: var(--yellow-2);
 }
 
-#alert {
-    width: 200px;
-    height: 100px;
-    line-height: 100px;
-    background-color: #ffc107;
-    color: #343a40;
-    display: block;
-    text-align: center;
-    opacity: 0;
+/* Style The Dropdown Button */
+.dropbtn {
+  background-color: var(--black-2);
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 10px;
+  color: white;
+  padding: 16px;
+  font-size: 16px;
+  border: none;
+  cursor: pointer;
 }
 
-.fade-in{
-    animation: fadeIn  .5s;
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
 }
 
-.fade-out{
-    animation: fadeOut ease .5s;
+/* Dropdown Content (Hidden by Default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  right: 0;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
 }
 
-@keyframes fadeIn {
-    0% {
-        opacity: 0;
-    }
-    100% {
-        opacity: 1;
-    }
+/* Links inside the dropdown */
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
 }
 
-@keyframes fadeOut {
-    0% {
-        opacity: 1;
-    }
-    100%{
-        opacity: 0;
-    }
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
 }

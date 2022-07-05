@@ -27,7 +27,7 @@ Route::add('/home', fn () => $controller->home(), ['get']);
 Route::add('/buscaFilmes', fn () => $mediaController->buscaFilmes(), ['get']);
 Route::add('/buscaSeries', fn () => $mediaController->buscaSeries(), ['get']);
 Route::add('/buscaLivros', fn () => $mediaController->buscaLivros(), ['get']);
-Route::add('/adicionaMidia', fn () => $mediaController->adicionamedia(), ['get']);
+Route::add('/adicionarMidia', fn () => $mediaController->adicionamedia(), ['get']);
 
 Route::add('/login', fn () => $controller->loginIndex(), ['get']);
 Route::add('/user/register', fn () => $controller->cadastroUsuario(), ['get']);
@@ -38,7 +38,7 @@ Route::add('/login', fn ()  => $controller->login(), ['post']);
 Route::add('/user/register', fn ()  => $controller->cadastrar(), ['post']);
 Route::add('/logout', fn () => $controller->sair(), ['get']);
 
-Route::add('/adicionamedia', fn ()  => $controller->home(), ['post']);
+Route::add('/adicionarMidia', fn ()  => $controller->home(), ['post']);
 
 
 // Rota auxiliar para redirecionar o usuário.
