@@ -53,7 +53,7 @@ class LoginController extends Controller
             $_SESSION['user'] = $this->loggedUser = $usuario;
             $this->view('home');
         } else {
-            header('Location: ' . BASEPATH . 'login?email=' . $_POST['email'] . '&mensagem=Usuário e/ou senha incorreta!');
+            $this->sendNotification('login', 'Usuário e/ou senha incorreta!&email='. $_POST['email'], 'error');
         }
     }
 
