@@ -74,37 +74,22 @@ class LoginController extends Controller
         try {
             $user = new Usuario($_POST['email'], $_POST['password'], $_POST['name']);
             $user->salvar();
-            header('Location: ' . BASEPATH . 'login?email=' . $_POST['email'] . '&mensagem=Usuário cadastrado com sucesso!');
+            $this->sendNotification('login', 'Usuário cadastrado com sucesso!&email='.$_POST['email'], 'success');
         } catch (\Throwable $th) {
-            //header('Location: ' . BASEPATH . 'user/register?email=' . $_POST['email'] . '&mensagem=Email já cadastrado!');
-            var_dump($th);
+            $this->sendNotification('login', 'E-mail já cadastrado!&email='.$_POST['email'], 'error');
         }
     }
 
     /**
      *  Função responsável por renderizar as informações do usuário (se estiver logado).
      */
-    public function info(): void
+    public function profile(): void
     {
         if (!$this->loggedUser) {
-            header('Location: ' . BASEPATH . 'login?mensagem=Você precisa se identificar primeiro');
+            $this->sendNotification('login', 'Você precisa se identificar primeiro', 'error');
             return;
         }
         $this->view('users/info', $this->loggedUser);
-    }
-
-    /**
-     *  Função responsável por renderizar as informações de qualquer usuário.
-     */
-    public function publicInfo($id): void
-    {
-        $usuario = Usuario::buscarUsuarioPorId($id);
-
-        if (isset($usuario)) {
-            $this->view('users/info', $usuario);
-        } else {
-            header('Location: ' . BASEPATH . 'login?mensagem=Usuario no encontrado');
-        }
     }
 
     /**
@@ -112,11 +97,7 @@ class LoginController extends Controller
      */
     public function sair(): void
     {
-        if (!$this->loggedUser) {
-            header('Location: ' . BASEPATH . 'login?mensagem=Você precisa se identificar primeiro');
-            return;
-        }
         unset($_SESSION['user']);
-        header('Location: ' . BASEPATH . 'login?mensagem=Usuário deslogado com sucesso!');
+        $this->sendNotification('login', 'Usuário deslogado com sucesso!', 'success');
     }
 }

@@ -31,8 +31,7 @@ Route::add('/adicionarMidia', fn () => $mediaController->adicionamedia(), ['get'
 
 Route::add('/login', fn () => $controller->loginIndex(), ['get']);
 Route::add('/user/register', fn () => $controller->cadastroUsuario(), ['get']);
-Route::add('/user/info', fn () => $controller->info(), ['get']);
-Route::add('/user/info/([0-9]+)', fn ($id) => $controller->publicInfo($id), ['get']);
+Route::add('/user/profile', fn () => $controller->profile(), ['get']);
 
 Route::add('/login', fn ()  => $controller->login(), ['post']);
 Route::add('/user/register', fn ()  => $controller->cadastrar(), ['post']);

@@ -34,11 +34,9 @@ class MediaController extends Controller
         try {
             $filme = new Filme($_POST['titulo'], $_POST['ano'], $_POST['genero'], $_POST['elenco'], $_POST['duracao'], $_POST['sinopse'], $_POST['caminhoimg'],);
             $filme->salvar();
-            header('Location: ' . BASEPATH . 'media?titulo=' . $_POST['titulo'] . '&mensagem=Filme cadastrado com sucesso!');
-            $this->view('home');
+            $this->sendNotification('buscarFilmes', 'Filme cadastrado com sucesso.&titulo='.$_POST['titulo'], 'success');
         } catch (\Throwable $th) {
-            //header('Location: ' . BASEPATH . 'media/register?titulo=' . $_POST['titulo'] . '&mensagem=Filme já cadastrado!');
-            var_dump($th);
+            $this->sendNotification('adicionaMidia', 'Filme já cadastrado!&titulo=' . $_POST['titulo'], 'error');
         }
     }
 
@@ -51,11 +49,9 @@ class MediaController extends Controller
         try {
             $filme = new Serie($_POST['titulo'], $_POST['ano'], $_POST['genero'], $_POST['elenco'], $_POST['sinopse'], $_POST['caminhoimg'],);
             $filme->salvar();
-            header('Location: ' . BASEPATH . 'media?titulo=' . $_POST['titulo'] . '&mensagem=Serie cadastrada com sucesso!');
-            $this->view('home');
+            $this->sendNotification('buscarSeries', 'Série cadastrada com sucesso!&titulo='.$_POST['titulo'], 'success');
         } catch (\Throwable $th) {
-            //header('Location: ' . BASEPATH . 'media/register?titulo=' . $_POST['titulo'] . '&mensagem=Serie já cadastrada!');
-            var_dump($th);
+            $this->sendNotification('adicionaMidia', 'Série já cadastrado!&titulo=' . $_POST['titulo'], 'error');
         }
     }
 
@@ -68,11 +64,9 @@ class MediaController extends Controller
         try {
             $filme = new Livro($_POST['titulo'], $_POST['ano'], $_POST['genero'], $_POST['autor'], $_POST['editora'], $_POST['sinopse'], $_POST['caminhoimg'],);
             $filme->salvar();
-            header('Location: ' . BASEPATH . 'media?titulo=' . $_POST['titulo'] . '&mensagem=Livro cadastrado com sucesso!');
-            $this->view('home');
+            $this->sendNotification('buscaLivros', 'Livro cadastrado com sucesso!&titulo='.$_POST['titulo'], 'success');
         } catch (\Throwable $th) {
-            //header('Location: ' . BASEPATH . 'media/register?titulo=' . $_POST['titulo'] . '&mensagem=Livro já cadastrado!');
-            var_dump($th);
+            $this->sendNotification('adicionaMidia', 'Livro já cadastrado!&titulo=' . $_POST['titulo'], 'error');
         }
     }
 
