@@ -1,66 +1,68 @@
 /* Em desenvolvimento por Lucas Cabral */
-@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
 
-:root{
-    --black-1: hsl(0, 0%, 50%);
-    --black-2: hsl(345, 6%, 13%);
-    --black-3: hsl(330, 6%, 6%);
-    --yellow-1: hsl(61, 100%, 26%);
-    --yellow-2: hsl(61, 89%, 48%);
-    font-family: 'Roboto', sans-serif;
-    background-color: hsl(0, 0%, 90%);
+:root {
+  --black-1: hsl(0, 0%, 50%);
+  --black-2: hsl(345, 6%, 13%);
+  --black-3: hsl(330, 6%, 6%);
+  --yellow-1: hsl(61, 100%, 26%);
+  --yellow-2: hsl(61, 89%, 48%);
+  font-family: "Roboto", sans-serif;
+  background-color: hsl(0, 0%, 90%);
 }
 
-nav{
-    color: white;
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: space-between;
-    background-color: var(--black-2);
-    height: 4rem;
-    margin-bottom: 0;
+nav {
+  color: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 1rem;
+  justify-content: space-between;
+  background-color: var(--black-2);
+  height: 4rem;
+  margin-bottom: 0;
 }
 
-nav a{
-    padding: 1rem;
+nav a {
+  padding: 1rem;
 }
 
-.logo__text{
-    font-size: 1.75rem;
-    color: var(--yellow-2);
-    font-weight: 600;
-    border: 1px solid var(--yellow-1);
-    padding: 3px;
+.logo__text {
+  font-size: 1.75rem;
+  color: var(--yellow-2);
+  font-weight: 600;
+  border: 1px solid var(--yellow-1);
+  padding: 3px;
 }
 
-.nav__menu{
-    margin-left: -6rem;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: flex-end;
+.nav__menu {
+  margin-left: -6rem;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
 }
 
-.nav_actions{
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.nav_actions {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-nav a:hover{
-    background-color: var(--black-1);
+nav a:hover {
+  background-color: var(--black-1);
 }
 
-a:link, a:visited{
-    color: white;
-    text-decoration: none;
+a:link,
+a:visited {
+  color: white;
+  text-decoration: none;
 }
 
-nav a.active{
-    background-color: var(--black-1);
-    color: var(--yellow-2);
+nav a.active {
+  background-color: var(--black-1);
+  color: var(--yellow-2);
 }
 
 /* Style The Dropdown Button */
@@ -90,7 +92,7 @@ nav a.active{
   right: 0;
   background-color: #f9f9f9;
   min-width: 180px;
-  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
   z-index: 1;
 }
 
@@ -103,7 +105,9 @@ nav a.active{
 }
 
 /* Change color of dropdown links on hover */
-.dropdown-content a:hover {background-color: #f1f1f1}
+.dropdown-content a:hover {
+  background-color: #f1f1f1;
+}
 
 /* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
@@ -113,4 +117,10 @@ nav a.active{
 /* Change the background color of the dropdown button when the dropdown content is shown */
 .dropdown:hover .dropbtn {
   background-color: var(--black-1);
+}
+
+@media only screen and (max-width: 1024px) {
+  .nav__logo{
+    display: none;
+  }
 }
