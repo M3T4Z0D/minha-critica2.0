@@ -63,3 +63,40 @@ nav a.active{
     background-color: var(--black-1);
     color: var(--yellow-2);
 }
+
+#alert {
+    width: 200px;
+    height: 100px;
+    line-height: 100px;
+    background-color: #ffc107;
+    color: #343a40;
+    display: block;
+    text-align: center;
+    opacity: 0;
+}
+
+.fade-in{
+    animation: fadeIn  .5s;
+}
+
+.fade-out{
+    animation: fadeOut ease .5s;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}

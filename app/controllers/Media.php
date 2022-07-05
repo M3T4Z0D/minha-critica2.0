@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Controllers\Controller;
 use App\Models\Usuario;
 use App\Models\Filmes;
 use App\Models\Livros;
@@ -38,6 +39,10 @@ class MediaController extends Controller
     }
     public function adicionamedia(): void
     {
+        if(!$this->loggedUser){
+            $this->sendNotification('login', 'É necessário estar logado para acessar esta página.', 'error');
+            return;
+        }
         $this->view('media/media_register_page');
     }
 }

@@ -27,7 +27,7 @@ Route::add('/home', fn () => $controller->home(), ['get']);
 Route::add('/buscaFilmes', fn () => $mediaController->buscaFilmes(), ['get']);
 Route::add('/buscaSeries', fn () => $mediaController->buscaSeries(), ['get']);
 Route::add('/buscaLivros', fn () => $mediaController->buscaLivros(), ['get']);
-Route::add('/adicionaMedia', fn () => $mediaController->adicionamedia(), ['get']);
+Route::add('/adicionaMidia', fn () => $mediaController->adicionamedia(), ['get']);
 
 Route::add('/login', fn () => $controller->loginIndex(), ['get']);
 Route::add('/user/register', fn () => $controller->cadastroUsuario(), ['get']);
