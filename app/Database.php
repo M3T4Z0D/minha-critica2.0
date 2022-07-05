@@ -34,8 +34,8 @@ class Database
         $con->exec('
             CREATE TABLE IF NOT EXISTS Filmes (
                 FilmesId INTEGER PRIMARY KEY AUTOINCREMENT,
-                titulo TEXT,
-                ano NUMERIC(4),
+                titulo TEXT UNIQUE,
+                ano TEXT,
                 genero TEXT,
                 elenco TEXT,
                 duracao TEXT,
@@ -46,8 +46,8 @@ class Database
         $con->exec('
             CREATE TABLE IF NOT EXISTS Series (
                 SeriesId INTEGER PRIMARY KEY AUTOINCREMENT,
-                titulo TEXT,
-                ano NUMERIC(4),
+                titulo TEXT UNIQUE,
+                ano TEXT,
                 genero TEXT,
                 elenco TEXT,
                 sinopse TEXT,
@@ -57,8 +57,8 @@ class Database
         $con->exec('
             CREATE TABLE IF NOT EXISTS Livros (
                 LivrosId INTEGER PRIMARY KEY AUTOINCREMENT,
-                titulo TEXT,
-                ano NUMERIC(4),
+                titulo TEXT UNIQUE,
+                ano TEXT,
                 genero TEXT,
                 autor TEXT,
                 sinopse TEXT,

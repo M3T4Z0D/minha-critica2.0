@@ -38,6 +38,9 @@ Route::add('/login', fn ()  => $controller->login(), ['post']);
 Route::add('/user/register', fn ()  => $controller->cadastrar(), ['post']);
 Route::add('/logout', fn () => $controller->sair(), ['get']);
 
+Route::add('/adicionamedia', fn ()  => $controller->home(), ['post']);
+
+
 // Rota auxiliar para redirecionar o usuário.
 Route::add('/', function () {
     header('Location: ' . BASEPATH . 'home');

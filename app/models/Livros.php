@@ -39,7 +39,7 @@ class Livro
     {
         $con = Database::getConnection();
 
-        $stm = $con->prepare('INSERT INTO Livros (caminhoimg, titulo, ano, genero, elenco, sinopse) VALUES (:caminhoimg, :titulo, :ano, :genero, :autor, :sinopse)');
+        $stm = $con->prepare('INSERT INTO Livros (caminhoimg, titulo, ano, genero, autor, sinopse) VALUES (:caminhoimg, :titulo, :ano, :genero, :autor, :sinopse)');
         $stm->bindValue(':titulo', $this->titulo);
         $stm->bindValue(':ano', $this->ano);
         $stm->bindValue(':genero', $this->genero);

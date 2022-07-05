@@ -50,7 +50,7 @@
                     <div class="input-pesquisa centralizar"><input type="text" id="pesquisa_filme" name="pesquisa_filme" placeholder="Pesquisar filme"></div>
                 </div>
                 <div class="add-filme centralizar">
-                    <input type="button" name="add-filme" value="Adicionar filme">
+                    <a href="<?= BASEPATH  ?>adicionaMedia" target="_parent"><input type="button" name="add-filme" value="Adicionar Filme"></a>
                     <a href="/minhacritica2.0/app/views/media_register_page" target="_parent"></a>
                 </div>
             </div>
