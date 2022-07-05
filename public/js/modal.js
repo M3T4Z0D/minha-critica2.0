@@ -11,6 +11,7 @@ const getMessage = () => {
     icon: params.get('icon') || 'warning'
   }
 
+  window.history.replaceState(null, null, window.location.pathname);//atualizo url sem parametros
   return message;
 }
 
